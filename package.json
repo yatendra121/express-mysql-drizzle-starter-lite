@@ -1,0 +1,46 @@
+{
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/server.ts --bundle --outfile=build/server.js --platform=node --format=esm --packages=external",
+    "start": "node build/server.js",
+    "dev-tsx": "tsx watch src/server.ts",
+    "dev": "npx node --import=tsx --watch src/server.ts",
+    "generate": "drizzle-kit generate",
+    "migrate": "tsx src/migrate.ts",
+    "lint": "@biomejs/biome check --write",
+    "lint:fix": "npx @biomejs/biome lint --write"
+  },
+  "dependencies": {
+    "@qnx/errors": "^0.7.9",
+    "@qnx/response": "^0.7.9",
+    "@qnx/winston": "^0.7.9",
+    "consola": "^3.4.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.44.2",
+    "drizzle-zod": "^0.8.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "mysql2": "^3.14.1",
+    "request-ip": "^3.3.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.3",
+    "@types/request-ip": "^0.0.41",
+    "drizzle-kit": "^0.31.1",
+    "esbuild": "^0.25.5",
+    "node": "^24.2.0",
+    "npm-run-all": "^4.1.5",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@8.15.4+sha256.cea6d0bdf2de3a0549582da3983c70c92ffc577ff4410cbf190817ddc35137c2"
+}
